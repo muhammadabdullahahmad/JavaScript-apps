@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Random Background Color</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 200px;
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Click the Button to Change Background</h2>
+    <button onclick="changeBackground()">Click Me 🎨</button>
+
+    <script>
+        function changeBackground() {
+            var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+
+</html>
