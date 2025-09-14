@@ -46,29 +46,99 @@
 
                 <!-- Calculator Buttons -->
                 <div class="row g-4">
-                    <div class="col-3"><button class="btn btn-secondary w-100">7</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">8</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">9</button></div>
-                    <div class="col-3"><button class="btn btn-warning w-100">/</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press7()">7</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press8()">8</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press9()">9</button></div>
+                    <div class="col-3"><button class="btn btn-warning w-100"   onclick="pressdivide()">/</button></div>
+     
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press4()">4</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press5()">5</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press6()">6</button></div>
+                    <div class="col-3"><button class="btn btn-warning w-100"  onclick="pressmultiply()">x</button></div>
 
-                    <div class="col-3"><button class="btn btn-secondary w-100">4</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">5</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">6</button></div>
-                    <div class="col-3"><button class="btn btn-warning w-100">x</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press1()">1</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press2()">2</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press3()">3</button></div>
+                    <div class="col-3"><button class="btn btn-warning w-100"  onclick="presssubtraction()">-</button></div>
 
-                    <div class="col-3"><button class="btn btn-secondary w-100">1</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">2</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">3</button></div>
-                    <div class="col-3"><button class="btn btn-warning w-100">-</button></div>
-
-                    <div class="col-3"><button class="btn btn-danger w-100">C</button></div>
-                    <div class="col-3"><button class="btn btn-secondary w-100">0</button></div>
-                    <div class="col-3"><button class="btn btn-success w-100">=</button></div>
-                    <div class="col-3"><button class="btn btn-warning w-100">+</button></div>
+                    <div class="col-3"><button class="btn btn-danger w-100" onclick="pressclear()">C</button></div>
+                    <div class="col-3"><button class="btn btn-secondary w-100" onclick="press0()">0</button></div>
+                    <div class="col-3"><button class="btn btn-success w-100" onclick="presseqaulto()">=</button></div>
+                    <div class="col-3"><button class="btn btn-warning w-100" onclick="pressplus()">+</button></div>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        <!-- JavaScript functions for button presses --->
+        function press7() {
+            document.getElementById('display').value = document.getElementById('display').value + '7';
+        }
+        function press8() {
+            document.getElementById('display').value += '8';
+        }
+        function press9() {
+            document.getElementById('display').value += '9';
+        }
+        function press4() {
+            document.getElementById('display').value += '4';
+        }
+        function press5() {
+            document.getElementById('display').value += '5';
+        }
+        function press6() {
+            document.getElementById('display').value += '6';
+        }
+        function press1() {
+            document.getElementById('display').value += '1';
+        }
+        function press2() {
+            document.getElementById('display').value += '2';
+        }
+        function press3() {
+            document.getElementById('display').value += '3';
+        }
+        function press0() {
+            document.getElementById('display').value += '0';
+        }
+        
+        function pressclear() {
+            document.getElementById('display').value = '';
+        }
+
+       let firstnumber = 0;
+        let secondnumber = 0;
+        function pressplus() {
+            firstnumber = document.getElementById('display').value;
+            document.getElementById('display').value += '+';
+        }
+        function presseqaulto() {
+            secondnumber = document.getElementById('display').value;
+            let result = parseInt(firstnumber) + parseInt(secondnumber);
+            document.getElementById('display').value = result;
+        }
+        
+        function presssubtraction() {
+            firstnumber = document.getElementById('display').value;
+            document.getElementById('display').value = '';
+        }
+        function pressmultiply() {
+           firstnumber = document.getElementById('display').value;
+            document.getElementById('display').value = '';
+        }
+    
+        function pressdivide() {
+            firstnumber = document.getElementById('display').value;
+            document.getElementById('display').value = '';
+        }
+         
+        // Additional functions for other operations can be added similarly
+       
+
+
+
+    </script>
+
 </body>
 
 </html>
