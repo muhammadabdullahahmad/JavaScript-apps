@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dice Rolling</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #dice {
+      width: 180px;
+      height: 180px;
+      margin: 20px auto;
+      border: 3px solid #333;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 100px;
+      /* Bigger dice number */
+      cursor: pointer;
+      background-color: white;
+      user-select: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #dice:hover {
+      background-color: #e0e0e0;
+    }
+
+    p {
+      color: #666;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Dice Rolling Simulator</h1>
+  <div id="dice" onclick="stopstart()"></div>
+  <p>Click the dice to start/stop rolling!</p>
+
+  <script>
+    var dice;
+    var dices = ['&#9856;', '&#9857;', '&#9858;', '&#9859;', '&#9860;', '&#9861;'];
+    var stopped = true;
+    var t;
+
+    function change() {
+      var random = Math.floor(Math.random() * 6);
+      dice.innerHTML = dices[random];
+    }
+
+    function stopstart() {
+      if (stopped) {
+        stopped = false;
+        t = setInterval(change, 100);
+      } else {
+        clearInterval(t);
+        stopped = true;
+      }
+    }
+
+    window.onload = function () {
+      dice = document.getElementById("dice");
+      stopstart();
+    }
+  </script>
+</body>
+
+</html>
